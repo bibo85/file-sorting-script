@@ -35,7 +35,7 @@ class FileOrganizer:
                 file_time = time.gmtime(unix_time)  # структурированное время
                 year = str(file_time[0])
                 month = str(file_time[1])
-                # новый путь назначения для файла: папка_назначения/год/месяц
+                # новый путь назначения для файла: родительская_директория/папка_назначения/год/месяц
                 new_dir_name = os.path.join(parent_dir, self.output_folder, year, month)
                 os.makedirs(new_dir_name, exist_ok=True)  # рекурсивное создание директории
                 shutil.copy2(full_dir_file, new_dir_name)  # копирование файлов в новую папку
